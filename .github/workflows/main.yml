@@ -1,0 +1,40 @@
+# Este es un archivo main.yml que define la configuración y las tareas de mi app
+---
+# Configuración general de la app
+app:
+  name: Mi app
+  description: Esta es una app que te permite hacer cosas increíbles
+  version: 1.0.0
+  author: Tu nombre
+  license: MIT
+
+# Lista de páginas que componen la app
+pages:
+  - index.html
+  - calle.html
+  - casa.html
+  - mapa.html
+  - chat.html
+  - clientes.html
+
+# Lista de tareas que se deben realizar para desplegar la app
+tasks:
+  - name: Crear el directorio de la app
+    file:
+      path: /var/www/html/mi_app
+      state: directory
+      mode: 0755
+  - name: Copiar los archivos de la app al directorio
+    copy:
+      src: "{{ item }}"
+      dest: /var/www/html/mi_app
+    loop: "{{ pages }}"
+  - name: Instalar las dependencias de la app
+    shell: npm install
+    args:
+      chdir: /var/www/html/mi_app
+  - name: Iniciar el servidor de la app
+    shell: npm start
+    args:
+      chdir: /var/www/html/mi_app
+      
