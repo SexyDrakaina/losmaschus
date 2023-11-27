@@ -1,0 +1,52 @@
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("https://photos.app.goo.gl/5gWQSxFFeQGLvVQ56");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .button {
+            width: 100px;
+            height: 50px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .button-large {
+            width: 150px;
+            height: 75px;
+        }
+
+        .row {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <div class="row">
+                <button class="button button-large">Calle</button>
+                <button class="button button-large">Casa</button>
+            </div>
+            <a href="https://www.google.com/maps"><button class="button">Mapa</button></a>
+            <button class="button">Chat</button>
+            <button class="button">Clientes</button>
+        </div>
+    </div>
+</body>
+</html>
